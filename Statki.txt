@@ -1,0 +1,115 @@
+// statki.cpp : Defines the entry point for the console application.
+//
+
+
+//STATKI !!!
+
+
+#include "stdafx.h"
+/*
+BACKTRACKING
+ogolny algorytm wyszukiwania wszystkich (lub kilku) rozwi¹zañ niektórych problemów obliczeniowych, który stopniowo ... wikipedia
+*/
+
+#define DEPTH_MIN 10 //glebokosc zanurzenia
+//zdefiniowac typ wyliczeniowy, kier ruchu UP RIGHT, DOWN, LEFT
+/*
+mamy pola 10x10, dla kazdego sektora okreslam jego glebokoœæ, startujê z A1, koñczê na j10
+glebokosc zanurzenia musi byc silnie wiêksza od zanurzenia statku
+*/
+
+#define stale N i M na 10;
+
+
+
+int move 
+( int** pTab, int nRow, int nCol, int nDepth, int move_nr, int x, int y, int* px, int* py, int** pRoot );
+
+
+int root ( int** pTab, int nRow, int nCol, int nDepth, int x, int y, int** pRoot, int x_dest, int y_dest );
+void SetTab ( char* sFile, int** pTab, int nRow, int nCol );
+/*
+pTab, tablica okreslajaca glebokosc w kazdym kwadracie  //bêdzie format %d, z matrixa
+nrow, nCol, rozmiar pTab
+nDepth, minimalna glebokosc aby statek przep³yn¹³
+move_nr, kierunek ruchu
+x, y, indeksy w tablicy skad wykonujemy kolejny ruch, zaczynamy od 0,0
+px, py, nowe wspolrzedne
+pRoot, tablica paietajaca ruchy o rozm nRow, nCol
+
+*/
+
+int main()
+{
+
+
+
+	/*
+	!!! argc,
+	wykreowaæ dynamicznie dwie tablice dwuwymiarowe, ogólnie mog¹ byæ ró¿na wymiary
+	mo¿na wzi¹æ z matrixa
+
+	wyzerowaæ obie chyba, ¿e calloc w kraowaniu
+	wczytaæ dane, sprawdziæ argc
+	je¿eli nie znaleziono drogi od 0,0 do portu - funkcja rekur root, wypisaæ: nie ma mo¿liwoœci doplynaæ do portu !!!
+	jesli ok, wypisaæ pamiêæ, i zwolniæ pamiêæ
+	
+	
+	
+	
+	
+	
+	*/
+    return 0;
+}
+int move ( int** pTab, int nRow, int nCol, int nDepth, int move_nr, int x, int y, int* px, int* py, int** pRoot )
+{
+	/*
+	x,y wsporzedne skad robimy nowy ruchwykonac kolejny ruch w kierunku move_nr, obliczajac nowe wspolrzedne *px, *py switch
+	sprawdzic czy nowe indeksy *px, *py s¹ w zakresie indeksów tablicy
+	a nastêpnie sprawdziæ warunek czy nie jest za plytko >nDepth+1 oraz
+	czy nie by³o siê ju¿ w lokalizacji (*px, *py) wg tabl pRoot
+	jesli wszystko prawdziwe return 1
+	else return 0
+
+	*/
+
+}
+
+
+int root ( int** pTab, int nRow, int nCol, int nDepth, int x, int y, int** pRoot, int x_dest, int y_dest )
+{
+	//pierwsze wywolanie od 0,0
+	//x_dest, y_dest, wspolrzedne portu do ktorego ma dop³yn¹æ
+
+
+	/*
+	funkcja rekurencyjna
+
+	tabl pRoot pamieta deoge - 1 pole odwiedzono, 0 nieodwiedzono
+	if (dotarto do portu)
+	return 1;
+
+	else 
+	zdefiniowac nowe wspolrzedne, sprawdzic wszystkie mozliwosci ruchu, jesli ruch jest mozliwy w zadanym kierunku, jesli wykonanie klejnego kroku sie powiodlo - rekurencyjnie root, return1;
+	
+
+	jest wracamy to ustawiamy w pRoot, ¿e ruch by³ z³y
+	return 0;
+	return0;
+	*/
+
+
+}
+
+void SetTab ( char* sFile, int** pTab, int nRow, int nCol ) //ReadTab
+{
+	/*
+	wczytuje dane z pliku, 
+	sFIle, nazwa pliku wejsciowego, parametr main
+	pTab, tablica glebokosci morza
+	nRow, nCol, wymiary tej tablicy
+	*/
+
+
+}
